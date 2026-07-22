@@ -28,6 +28,9 @@ FIELD_RIGHT = FIELD_LEFT + FIELD_COLS * BRICK_WIDTH
 # --- Paddle, Ball -----------------------------------------------------------
 PADDLE_WIDTH, PADDLE_HEIGHT = 100, 12
 PADDLE_SPEED = 7
+PADDLE_MIN_WIDTH = 50
+PADDLE_MAX_WIDTH = 180
+PADDLE_RESIZE_STEP = 25
 
 BALL_RADIUS = 8
 BALL_SPEED_X = 4
@@ -35,9 +38,23 @@ BALL_SPEED_Y = -5
 SLIDE_FACTOR = 0.8
 MAX_BALL_SPEED_X = 8
 
+BALL_SPEED_FACTOR = 1.25
+MIN_BALL_SPEED = 3.0
+MAX_BALL_SPEED = 12.0
+
 # --- Bonuses ---------------------------------------------------------------------
+START_LIVES = 3
+LASER_COOLDOWN = 20
 BONUS_PROBABILITY = 0.3  # Chance that destroyed brick will drop a bonus
-BONUS_TYPES = ["extend", "multiball", "laser", "extra_life"]
+BONUS_TYPES = [
+    "extend",
+    "multiball",
+    "laser",
+    "extra_life",
+    "shrink",
+    "speed_up",
+    "speed_down",
+]
 
 # --- Visual Effects -----------------------------------------------------------
 TRAIL_LENGTH = 6  # Ball's Motion Trail Length
@@ -58,6 +75,7 @@ YELLOW = (255, 255, 0)
 GREEN = (0, 255, 0)
 CYAN = (0, 255, 255)
 MAGENTA = (255, 0, 255)
+BLUE = (60, 130, 255)
 PADDLE_COLOR = CYAN
 BALL_COLOR = WHITE
 
